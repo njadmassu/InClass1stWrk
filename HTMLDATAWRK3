@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Natan Admassu Portfolio</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+    background-color: #f4f4f4;
+    font-family: Arial;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+.section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+img {
+    width: 300px;
+    max-width: 90%;
+    margin: 10px;
+}
+
+canvas {
+    max-width: 700px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Natan Admassu</h1>
+<h2>My Soccer Portfolio</h2>
+
+<div class="section">
+<h2>About Me</h2>
+<p>My name is Natan Admassu. I am a Division I soccer goalkeeper at Binghamton University. Soccer has been a big part of my life, and I enjoy learning about sports and statistics.</p>
+</div>
+
+<div class="section">
+<h2>Soccer Photos</h2>
+
+<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018" alt="Soccer field">
+
+<img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d" alt="Soccer players">
+</div>
+
+<div class="section">
+<h2>Chart 1: Saves Per Game</h2>
+<p>This line graph shows example goalkeeper saves over five games.</p>
+<canvas id="myChart"></canvas>
+</div>
+
+<div class="section">
+<h2>Chart 2: Goals Allowed</h2>
+<p>This bar graph shows example goals allowed over five games.</p>
+<canvas id="myBarChart"></canvas>
+</div>
+
+<div class="section">
+<h2>My Design Choices</h2>
+<p>I decided to make my portfolio about soccer because it is something I enjoy and have been involved in for many years. I chose green for the title because it reminds me of a soccer field. I also used a light background with white sections to make everything easy to read. I included two soccer photos to match the theme of my website. For my charts, I used a line graph to show saves per game and a bar graph to show goals allowed. Overall, I wanted my website to look simple, clean, and organized.</p>
+</div>
+
+<script>
+
+// Line Graph
+const labels = ['Game 1', 'Game 2', 'Game 3', 'Game 4', 'Game 5'];
+
+const data = {
+    labels,
+    datasets: [{
+        label: 'Saves',
+        data: [4, 6, 3, 7, 5],
+        borderColor: 'green',
+        borderWidth: 2,
+        tension: 0.3
+    }]
+};
+
+new Chart(document.getElementById('myChart'), {
+    type: 'line',
+    data,
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+// Bar Graph
+const barData = {
+    labels,
+    datasets: [{
+        label: 'Goals Allowed',
+        data: [2, 1, 0, 2, 1],
+        backgroundColor: 'darkgreen'
+    }]
+};
+
+new Chart(document.getElementById('myBarChart'), {
+    type: 'bar',
+    data: barData,
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
